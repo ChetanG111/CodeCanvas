@@ -1,0 +1,34 @@
+* 
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body
+{
+    overflow: hidden;
+}
+
+section
+{
+    position: relative;
+}
+
+.save
+{
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+
+    width: 2.5rem;
+    height: 2.6em;
+
+    border-radius: 0;
+}
+
+.save img
+{
+    width: 1.4rem;
+    height: 1.6rem;
+}

@@ -6,20 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeCanvas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="whiteboardFavicon.png" type="image/x-icon">
 </head>
 <body onresize="resizeCanvas()">
     <section>
         <canvas id="mainCanvas"></canvas>
-        <button class="save"><i class="fa-solid fa-download"></i></button>
+        <button class="save" title="Save Button"><i class="fa-solid fa-download"></i></button>
         <!-- <button class="start" onclick="">Start Drawing</button> -->
 
         <ul class="tools">
-            <li class="pen"><i class="fa-solid fa-pen"></i></li>
-            <li class="eraser"><i class="fa-solid fa-eraser"></i></li>
-            <li class="line"><i class="fa-regular fa-pen-line"></i></li>
-            <li class="ellipse"><i class="fa-light fa-draw-circle"></i></li>
-            <li class="clear" onclick="Clear()"></li>
-            <li class="color"><input type="color" name="" id="colorPicker"></li>
+            <li class="pen" title="Pen Tool"><i class="fa-solid fa-pen"></i></li>
+            <li class="eraser" title="Eraser Tool"><i class="fa-solid fa-eraser"></i></li>
+            <li class="line" title="Line Tool"><i class="fa-solid fa-pen-line"></i></li>
+            <li class="ellipse" title="Ellipse Tool"><i class="fa-solid fa-draw-circle"></i></li>
+            <li class="clear" onclick="Clear()" title="Clear Canvas"><i class="fa-solid fa-square-xmark"></i></li>
+            <li class="color"><input type="color" title ="Draw Color" id="colorPicker"></li>
+            <li class="width"><input type="range" title="Line Width" min="1" max="10" id="widSlid"></li>
         </ul>
         <!-- <div id="cursor"></div> -->
     </section>

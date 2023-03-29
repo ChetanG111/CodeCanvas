@@ -10,10 +10,22 @@
 <body onresize="resizeCanvas()">
     <section>
         <canvas id="mainCanvas"></canvas>
-        <button class="save"><img src="download.png" onclick="Save()"></button>
-        <button class="start" onclick="">Start Drawing</button>
+        <button class="save"><i class="fa-solid fa-download"></i></button>
+        <!-- <button class="start" onclick="">Start Drawing</button> -->
+
+        <ul class="tools">
+            <li class="pen"><i class="fa-solid fa-pen"></i></li>
+            <li class="eraser"><i class="fa-solid fa-eraser"></i></li>
+            <li class="line"><i class="fa-regular fa-pen-line"></i></li>
+            <li class="ellipse"><i class="fa-light fa-draw-circle"></i></li>
+            <li class="clear" onclick="Clear()"></li>
+            <li class="color"><input type="color" name="" id="colorPicker"></li>
+        </ul>
+        <!-- <div id="cursor"></div> -->
     </section>
 
     <script src="script.js"></script>
+    <script src="script2.js"></script>
+    <script src="https://kit.fontawesome.com/f274d35c25.js" crossorigin="anonymous"></script>
 </body>
 </html>

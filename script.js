@@ -4,12 +4,12 @@ var ctx = c.getContext("2d");
 start_draw = false;
 
 
-window.onload = function(){resizeCanvas(); }
+window.onload = function(){resizeCanvas(); writePH();}
 function resizeCanvas()
 {
     c.width = window.innerWidth;
     c.height = window.innerHeight;
-    writePH()
+    
 }
 
 //Place Holder Text
@@ -31,7 +31,8 @@ function writePH()
 
 let is_drawing = false;
 let lineWidth = '2';
-let color = 'red';
+let drawColor = 'black';
+let eraseMode = false;
 
 
 c.addEventListener('mousedown', start);
@@ -47,24 +48,13 @@ function start(e)
 {
         if(!start_draw)
         {
-            ctx.clearRect(0, 0, c.width, c.height);
+            Clear();
             start_draw = true;
         }
 
         is_drawing = true;
         ctx.beginPath();
         ctx.moveTo(e.clientX, e.clientY);
-
-    
-    
-        if(!start_draw){ctx.clearRect(0, 0, c.width, c.height);
-            start_draw = true;}
-        
-        is_drawing = true;
-        ctx.beginPath();
-        ctx.moveTo(e.clientX, e.clientY);
-
-    
 }
 
 function draw(e)
@@ -75,7 +65,8 @@ function draw(e)
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
         ctx.lineWidth = lineWidth;
-        ctx.color = 'red';
+        if(!eraseMode){ ctx.strokeStyle = drawColor;}
+        else{ctx.strokeStyle = '#e7e7e7'}
         ctx.stroke();
     }
 
@@ -101,6 +92,8 @@ function Save()
 function Clear()
 {
     ctx.clearRect(0, 0, c.width, c.height);
+    ctx.fillStyle = '#e7e7e7';
+    ctx.fillRect(0, 0, c.width, c.height);
 }
 
 

@@ -12,3 +12,22 @@ function set_Title1()
     lineWidth = wSlider.value;
     wSlider.title = lineWidth;
 }
+
+
+function setMode(a, b)
+{
+    a.style.color = 'var(--hoverColor)'
+    b.style.color = 'black'
+}
+
+function changeMode(a)
+{
+    if(a == 1)
+    {
+        eraseMode = false;
+    }
+    else if(a == 2)
+    {
+        eraseMode = true;
+    }
+}

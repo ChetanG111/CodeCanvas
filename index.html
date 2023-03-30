@@ -12,19 +12,23 @@
     <section>
         <canvas id="mainCanvas"></canvas>
         <a class="name" href="index.html">Code Canvas - Whiteboard for ur Ideas</a>
-        <button class="save" title="Save Button"><i class="fa-solid fa-download"></i></button>
+        <button class="save" title="Save Button" onclick="Save()"><i class="fa-solid fa-download"></i></button>
 
         <ul class="tools">
-            <li class="pen" title="Pen Tool"><i class="fa-solid fa-pen"></i></li>
-            <li class="eraser" title="Eraser Tool"><i class="fa-solid fa-eraser"></i></li>
+            <li class="pen" id="pen" title="Pen Tool" onclick="setMode(this, eraser); changeMode(1)" style="color: var(--hoverColor);"><i class="fa-solid fa-pen"></i></li>
+            <li class="eraser" id="eraser" title="Eraser Tool" onclick="setMode(this, pen); changeMode(2)"><i class="fa-solid fa-eraser"></i></li>
             <li class="clear" onclick="Clear()" title="Clear Canvas"><i class="fa-solid fa-square-xmark"></i></li>
             <li class="color"><input type="color" title ="Draw Color" id="colorPicker" onchange="set_Title()"></li>
             <li class="width"><input type="range" title="1" value="1" min="1" max="20" id="widSlid" oninput="widSlidDis.value = this.value" onchange="set_Title1()"><output id="widSlidDis">1</output></li>
         </ul>
+        
+            <!-- <ul class="socials">
+                <li class="twitter"></li>
+                <li class="github"></li>
+            </ul> -->
     </section>
 
     <script src="script.js"></script>
-    <script src="ModeSwitching.js"></script>
     <script src="https://kit.fontawesome.com/f274d35c25.js" crossorigin="anonymous"></script>
     <script src="effects.js"></script>
 </body>

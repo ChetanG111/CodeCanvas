@@ -27,30 +27,44 @@ function writePH()
     ctx.stroke();
 }
 
-
-//Drawing 
+//Drawing
 
 let is_drawing = false;
-let lineWidth = '10';
+let lineWidth = '2';
 let color = 'red';
+
 
 c.addEventListener('mousedown', start);
 c.addEventListener('mousemove', draw);
 c.addEventListener('touchstart', start);
 c.addEventListener('touchmove', draw);
 c.addEventListener("mouseup", stopDraw);
+c.addEventListener('touchcancel', stopDraw);
+
+
 
 function start(e)
 {
-    if(!start_draw)
-    {
-        ctx.clearRect(0, 0, c.width, c.height);
-        start_draw = true;
-    }
+        if(!start_draw)
+        {
+            ctx.clearRect(0, 0, c.width, c.height);
+            start_draw = true;
+        }
 
-    is_drawing = true;
-    ctx.beginPath();
-    ctx.moveTo(e.clientX, e.clientY);
+        is_drawing = true;
+        ctx.beginPath();
+        ctx.moveTo(e.clientX, e.clientY);
+
+    
+    
+        if(!start_draw){ctx.clearRect(0, 0, c.width, c.height);
+            start_draw = true;}
+        
+        is_drawing = true;
+        ctx.beginPath();
+        ctx.moveTo(e.clientX, e.clientY);
+
+    
 }
 
 function draw(e)
@@ -62,7 +76,12 @@ function draw(e)
         ctx.lineCap = 'round';
         ctx.lineWidth = lineWidth;
         ctx.color = 'red';
-        ctx.stroke()
+        ctx.stroke();
+    }
+
+    else if(is_drawing)
+    {
+        ctx.lineTo(e.clientX, e.clientY);
     }
 }
 
@@ -78,8 +97,12 @@ function Save()
     link.click();
 }
 
-// Complete Erase
+// Clearing
 function Clear()
 {
     ctx.clearRect(0, 0, c.width, c.height);
 }
+
+
+
+

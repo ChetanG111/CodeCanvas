@@ -54,7 +54,7 @@ section
 {
     position: fixed;
     bottom: 1.5rem;
-    left: 40rem;
+    left: 35rem;
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -85,20 +85,70 @@ section
     color: var(--hoverColor);
 }
 
+.tools li:last-child
+{
+    width: auto;
+    padding: 4px;
+    gap: .5rem;
+}
+
+.tools li:last-child input
+{
+    width: 6rem;
+}
+
+.tools li:last-child output
+{
+    font-family: cursive;
+    font-weight: 500;
+}
+
 .widSlid
 {
     width: 50%;
 }
 
-#cursor
+.name
 {
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    background-color: #b6b6b6;
-    border-radius: 50%;
+    position: fixed;
+    top: 1rem;
     left: 1rem;
-    bottom: 1rem;
-
-    border: 1px solid rgb(71, 71, 71);
+    background-color: white;
+    padding: .5rem;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px  rgba(0, 0, 0, 0.055);
+    font-family: cursive;
+    font-weight: 500;
+    transition: .4s;
+    user-select: none;
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
 }
+
+.name:hover
+{
+    color: var(--hoverColor);
+}
+
+/* Input */
+#colorPicker
+{
+    width: 1.8rem;
+    height: 1.7rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+    border: none;
+    padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch {
+    border: none;
+    border-radius: 4px;
+}
+  
